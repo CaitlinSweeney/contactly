@@ -4,7 +4,6 @@ padding: 110px 0 32px;
 min-height: 496px;
 /* Incase of overlay problems just increase the min-height*/
 
-
 .topimg{
   background-image: url('../imgs/woman.jpg');
   background-repeat: no-repeat;
