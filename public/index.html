@@ -1,21 +1,158 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="ContactList">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Contactly</title>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js" charset="utf-8"></script>
-  <script src="/js/contact.js" charset="utf-8"></script>
-</head>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Designer - Bootstrap Portfolio Theme by Bootstrapious.com</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="all,follow">
+
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,700,800,400italic">
+    <script src="https://use.fontawesome.com/be718bed0f.js"></script>
+
+    <link rel="stylesheet" href="css/style.default.css" id="theme-stylesheet">
+    <link rel="stylesheet" href="css/custom.css">
+
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.js" charset="utf-8"></script> -->
+    <script src="http://pupunzi.com/mb.components/mb.YTPlayer/demo/inc/jquery.mb.YTPlayer.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js" charset="utf-8"></script>
+
+    <script src="/js/contact.js" charset="utf-8"></script>
+    <script src="/js/main.js" charset="utf-8"></script>
+
+  </head>
+
 <body ng-controller="contactCtrl as clCtrl">
-  <form>
-    <input type="text" ng-model="clCtrl.contact.name">
-    <input type="text" ng-model="clCtrl.contact.address">
-    <input type="text" ng-model="clCtrl.contact.city">
-    <input type="text" ng-model="clCtrl.contact.state">
-    <input type="text" ng-model="clCtrl.contact.zip">
-    <button type="submit" ng-click="clCtrl.create()">Submit</button>
-  </form>
-</body>
+
+    <section id="intro" class="text-intro no-padding-bottom">
+<!--
+  <section class="content-section video-section">
+  <div class="pattern-overlay">
+  <a id="bgndVideo" class="player" data-property="{videoURL:'https://www.youtube.com/watch?v=DE2R7s5SCSQ',containment:'.video-section', quality:'large', autoPlay:true, mute:true, opacity:1}">bg</a>
+    <div class="container">
+    </div>
+  </div>
+</section> -->
+
+      <div class="container topimg">
+        <div class="row">
+          <div class="col-md-12 col-lg-10">
+            <h1>Hello.<br /><span class="text-primary">Welcome</span> to Contactly<span class="text-primary"></span></h1>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section id="contact">
+      <div class="container clearfix">
+        <div class="row">
+          <div class="col-md-12">
+            <h3 class="heading">GIVE ME YOUR INFO!!</h3>
+            <div class="row">
+              <div class="col-md-12">
+
+                <div id="contact-form" class="container-fluid">
+                  <form>
+                <div class="form-group">
+                    <label for="surname">Your First Name *</label>
+                    <input class="form-control" type="text" ng-model="clCtrl.contact.name">
+                  </div>
+                </div>
+                <div class="col-sm-4">
+                  <div class="form-group">
+                    <label for="surname">Your Address *</label>
+                    <input class="form-control" type="text" ng-model="clCtrl.contact.address">
+                  </div>
+                </div>
+                <div class="col-sm-4">
+                  <div class="form-group">
+                    <label for="surname">City</label>
+                    <input class="form-control" type="text" ng-model="clCtrl.contact.city">
+                  </div>
+                </div>
+                <div class="col-sm-4">
+                  <div class="form-group">
+                    <label for="surname">State</label>
+                    <input class="form-control"  type="text" ng-model="clCtrl.contact.state">
+                  </div>
+                </div>
+                    <div class="col-sm-4">
+                      <div class="form-group">
+                      <label for="surname">Zip Code</label>
+                    <input class="form-control"  type="text" ng-model="clCtrl.contact.zip">
+                  </div>
+                </div>
+                    <div class="col-sm-4 pull-right">
+                      <div class="form-group">
+                      <label for="surname">Submit</label>
+                    <button class="form-control"  type="submit" ng-click="clCtrl.create()">Submit</button>
+                  </div>
+                </div>
+                </form>
+              </div> <!-- container -->
+            </div> <!-- row -->
+
+          </div>
+        </div>
+
+            <div ng-repeat="contact in clCtrl.contactList" class="card col-sm-4 ">
+              <img class="card-img-top" src="imgs/avatar.png" alt="Card image cap">
+              <div class="card-block">
+              <p class="card-text">{{contact.name}}</p>
+              <p class="card-text">{{contact.address}}</p>
+              <p class="card-text">{{contact.city}}</p>
+              <p class="card-text">{{contact.state}}</p>
+              <p class="card-text">{{contact.zip}}</p>
+              </div>
+            </div>
+
+        </div>
+      </div>
+
+    </section>
+
+    <!-- map-->
+    <!-- <div id="map"></div> -->
+    <footer class="footer">
+      <div class="footer__copyright">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6">
+              <p>&copy;2016 Best Cohort EVER!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- Javascript files-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.0.min.js"><\/script>')</script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;amp;sensor=false"></script>
+    <script src="js/jquery.cookie.js"> </script>
+    <script src="js/ekko-lightbox.js"></script>
+    <script src="js/front.js"></script>
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID.-->
+    <!---->
+    <script>
+      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+      e.src='//www.google-analytics.com/analytics.js';
+      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+      ga('create','UA-XXXXX-X');ga('send','pageview');
+    </script>
+<!-- <script>
+$(document).ready(function () {
+
+    $(".player").mb_YTPlayer();
+
+});</script> -->
+
+
+  </body>
 </html>
